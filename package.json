@@ -1,0 +1,25 @@
+{
+  "name": "eslint-config",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "伊墨的eslint配置",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint --fix"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": {
+    "name": "伊墨",
+    "email": "1905672206@qq.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.21.0",
+    "jiti": "^2.4.2",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}
