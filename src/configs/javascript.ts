@@ -1,11 +1,15 @@
 import type { Linter } from 'eslint'
-import { GLOB_JS } from '../globs.ts'
+import { GLOB_JS, GLOB_JSX } from '../globs.ts'
 import globals from 'globals'
 
-export function javascript(): Linter.Config {
+export type JavascriptOptions = {
+  jsx?: boolean
+}
+
+export function javascript(options: JavascriptOptions = {}): Linter.Config {
+  const { jsx = true } = options
   return {
-    name: 'yimo/js',
-    files: [GLOB_JS],
+    files: jsx ? [GLOB_JS, GLOB_JSX] : [GLOB_JS],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
@@ -16,7 +20,7 @@ export function javascript(): Linter.Config {
       parserOptions: {
         sourceType: 'module',
         ecmaVersion: 'latest',
-        ecmaFeatures: { globalReturn: false, impliedStrict: true },
+        ecmaFeatures: { globalReturn: false, impliedStrict: true, jsx },
       },
     },
     rules: {
