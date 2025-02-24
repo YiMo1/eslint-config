@@ -1,3 +1,3 @@
-import { javascript } from './src/index.ts'
+import { yimo } from './src/index.ts'
 
-export default [{ ignores: ['dist'] }, ...javascript()]
+export default yimo()
