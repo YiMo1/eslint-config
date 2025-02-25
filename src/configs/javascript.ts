@@ -1,5 +1,6 @@
-import type { Linter } from 'eslint'
 import globals from 'globals'
+
+import type { Linter } from 'eslint'
 
 export function javascript(): Linter.Config[] {
   return [

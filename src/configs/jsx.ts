@@ -1,5 +1,6 @@
-import type { Linter } from 'eslint'
 import { GLOB_JSX, GLOB_TSX } from '../globs.ts'
+
+import type { Linter } from 'eslint'
 
 export function jsx(): Linter.Config[] {
   return [

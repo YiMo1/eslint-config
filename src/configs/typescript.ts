@@ -1,8 +1,10 @@
-import type { ESLint, Linter } from 'eslint'
-import { GLOB_TS } from '../globs.ts'
 import plugin from '@typescript-eslint/eslint-plugin'
 import parser from '@typescript-eslint/parser'
+
+import { GLOB_TS } from '../globs.ts'
 import { renameRules } from '../tools.ts'
+
+import type { ESLint, Linter } from 'eslint'
 
 export type TypescriptOptions = {
   extraFiles?: string[]
