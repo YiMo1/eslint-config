@@ -245,8 +245,8 @@ export function javascript(): Linter.Config[] {
         'sort-imports': [
           'error',
           {
-            ignoreCase: false,
-            ignoreDeclarationSort: false,
+            ignoreCase: true,
+            ignoreDeclarationSort: true,
             ignoreMemberSort: false,
             allowSeparatedGroups: true,
             memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'],
