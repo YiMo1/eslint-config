@@ -1,9 +1,4 @@
-import type { Linter } from 'eslint'
-
-export function renameRules(
-  rules: Linter.RulesRecord,
-  map: Record<string, string>,
-): Linter.RulesRecord {
+export function renameRules(rules: Record<string, unknown>, map: Record<string, string>) {
   return Object.fromEntries(
     Object.entries(rules).map(([key, value]) => {
       for (const [from, to] of Object.entries(map)) {
