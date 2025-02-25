@@ -28,6 +28,7 @@ export function imports(): Linter.Config[] {
             ],
           },
         ],
+        'import/no-duplicates': ['error', { 'prefer-inline': false, considerQueryString: true }],
       },
     },
   ]
