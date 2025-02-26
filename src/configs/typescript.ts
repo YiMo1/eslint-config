@@ -38,7 +38,6 @@ export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
           },
           { '@typescript-eslint': 'ts' },
         ),
-        'no-unused-vars': 'off', // ts(6133)
         'ts/consistent-type-definitions': ['error', 'type'],
       },
     },
