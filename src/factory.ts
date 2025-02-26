@@ -5,6 +5,7 @@ import {
   imports,
   javascript,
   jsx,
+  tailwindcss,
   typescript,
   type TypescriptOptions,
 } from './configs/index.ts'
@@ -16,6 +17,7 @@ type Options = {
   jsx?: boolean
   ignores?: string[]
   ts?: boolean | Pick<TypescriptOptions, 'type'>
+  tailwindcss?: boolean
 }
 
 export function yimo(options: Options = {}, ...extraConfigs: Linter.Config[]) {
@@ -23,6 +25,7 @@ export function yimo(options: Options = {}, ...extraConfigs: Linter.Config[]) {
     jsx: enableJsx = true,
     ignores: userIgnores = [],
     ts: enableTs = isPackageExists('typescript'),
+    tailwindcss: enableTailwindcss = isPackageExists('tailwindcss'),
   } = options
 
   const configs: (Linter.Config | Linter.Config[])[] = [
@@ -38,6 +41,10 @@ export function yimo(options: Options = {}, ...extraConfigs: Linter.Config[]) {
   if (enableTs) {
     const { type } = typeof enableTs == 'boolean' ? {} : enableTs
     configs.push(typescript({ extraFiles: enableJsx ? [GLOB_TSX] : [], type }))
+  }
+
+  if (enableTailwindcss) {
+    configs.push(tailwindcss())
   }
 
   configs.push(extraConfigs)
