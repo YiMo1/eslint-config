@@ -1,4 +1,4 @@
-import { ignores } from './configs/index.ts'
+import { ignores, imports } from './configs/index.ts'
 import type { Linter } from 'eslint'
 
 export type YimoOptions = {
@@ -7,7 +7,7 @@ export type YimoOptions = {
 
 export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]) {
   const { ignores: userIgnores } = options
-  const configs = [ignores(userIgnores)]
+  const configs: Linter.Config[] = [ignores(userIgnores), imports()]
 
-  return [...configs, ...extraConfigs]
+  return configs.concat(extraConfigs)
 }
