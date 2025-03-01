@@ -10,3 +10,4 @@ export const GLOB_EXCLUDE = [
 export const GLOB_JSX = '**/*.jsx'
 export const GLOB_TSX = '**/*.tsx'
 export const GLOB_TS = '**/*.ts'
+export const GLOB_JS = '**/*.js'
