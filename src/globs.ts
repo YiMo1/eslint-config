@@ -7,3 +7,4 @@ export const GLOB_EXCLUDE = [
   '**/temp',
   '**/vite.config.*.timestamp-*',
 ]
+export const GLOB_JSX = '**/*.jsx'
