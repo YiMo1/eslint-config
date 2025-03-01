@@ -1,5 +1,7 @@
 import globals from 'globals'
+
 import { GLOB_JSX } from '../globs.ts'
+
 import type { Linter } from 'eslint'
 
 export function javascript(): Linter.Config[] {
