@@ -33,5 +33,8 @@ export function imports(): Linter.Config {
       'import-x/no-duplicates': 'error',
       'import-x/named': 'error',
     },
+    settings: {
+      'import-x/extensions': ['.js', '.jsx'],
+    },
   }
 }
