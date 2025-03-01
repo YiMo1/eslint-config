@@ -4,7 +4,7 @@ import type { ESLint, Linter } from 'eslint'
 
 export function imports(): Linter.Config {
   return {
-    plugins: { ['import-x']: importX as unknown as ESLint.Plugin },
+    plugins: { 'import-x': importX as unknown as ESLint.Plugin },
     rules: {
       'import-x/no-deprecated': 'warn',
       'import-x/no-empty-named-blocks': 'error',
@@ -30,7 +30,7 @@ export function imports(): Linter.Config {
           ],
         },
       ],
-      'import-x/no-duplicates': 'error',
+      'import-x/no-duplicates': ['error', { 'prefer-inline': true }],
       'import-x/named': 'error',
     },
     settings: {
