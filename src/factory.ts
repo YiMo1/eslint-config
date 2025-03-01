@@ -1,13 +1,21 @@
-import { ignores, imports } from './configs/index.ts'
+import { ignores, imports, tailwindcss } from './configs/index.ts'
 import type { Linter } from 'eslint'
+import { isPackageExists } from 'local-pkg'
 
 export type YimoOptions = {
   ignores?: string[]
+  tailwindcss?: boolean
 }
 
 export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]) {
-  const { ignores: userIgnores } = options
+  const { ignores: userIgnores, tailwindcss: enableTailwindcss = isPackageExists('tailwindcss') } =
+    options
+
   const configs: Linter.Config[] = [ignores(userIgnores), imports()]
+
+  if (enableTailwindcss) {
+    configs.push(tailwindcss())
+  }
 
   return configs.concat(extraConfigs)
 }
