@@ -1,15 +1,11 @@
 import { join } from 'node:path'
 import { existsSync } from 'node:fs'
 
-import { type ConfigArray, configs } from 'typescript-eslint'
+import { configs } from 'typescript-eslint'
 
 import { GLOB_TS, GLOB_TSX } from '../globs.ts'
 
 import type { Linter } from 'eslint'
-
-function extractRules(configs: ConfigArray) {
-  return configs[configs.length - 1].rules
-}
 
 export function typescript(): Linter.Config[] {
   const enableType = existsSync(join(process.cwd(), 'tsconfig.json'))
@@ -17,32 +13,25 @@ export function typescript(): Linter.Config[] {
   return [
     configs.base as Linter.Config,
     configs.eslintRecommended as Linter.Config,
+    { files: [GLOB_TSX], languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
     {
       rules: {
-        ...extractRules(configs.strict),
-        ...extractRules(configs.stylistic),
+        ...configs.all[configs.all.length - 1].rules,
         '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
-        '@typescript-eslint/consistent-type-imports': [
-          'error',
-          { prefer: 'type-imports', fixStyle: 'separate-type-imports' },
-        ],
-        '@typescript-eslint/consistent-type-exports': 'error',
-        '@typescript-eslint/no-import-type-side-effects': 'error',
+        '@typescript-eslint/no-unsafe-type-assertion': 'off',
+        '@typescript-eslint/naming-convention': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+        '@typescript-eslint/no-magic-numbers': 'off',
+        ...(enableType ? {} : configs.disableTypeChecked.rules),
       },
     },
-    { files: [GLOB_TSX], languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
     enableType
       ? {
           files: [GLOB_TS, GLOB_TSX],
           languageOptions: {
-            parserOptions: {
-              projectService: true,
-              tsconfigRootDir: process.cwd(),
-            },
-          },
-          rules: {
-            ...extractRules(configs.strictTypeCheckedOnly),
-            ...extractRules(configs.stylisticTypeCheckedOnly),
+            parserOptions: { projectService: true, tsconfigRootDir: process.cwd() },
           },
         }
       : {},
