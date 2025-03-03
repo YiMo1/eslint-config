@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs'
 
 import { configs, parser, plugin } from 'typescript-eslint'
 
-import { GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX } from '../globs.ts'
+import { GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs.ts'
 
 import type { ESLint, Linter } from 'eslint'
 
@@ -13,7 +13,7 @@ export function typescript(): Linter.Config[] {
   return [
     { plugins: { '@typescript-eslint': plugin as ESLint.Plugin } },
     {
-      files: [GLOB_TS, GLOB_TSX],
+      files: [GLOB_TS, GLOB_TSX, GLOB_VUE],
       languageOptions: {
         sourceType: 'module',
         parser: parser as Linter.Parser,
@@ -21,6 +21,7 @@ export function typescript(): Linter.Config[] {
           projectService: enableType,
           tsconfigRootDir: process.cwd(),
           ecmaFeatures: { jsx: true },
+          extraFileExtensions: ['.vue'],
         },
       },
     },
