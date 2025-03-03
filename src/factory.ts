@@ -1,6 +1,14 @@
 import { isPackageExists } from 'local-pkg'
 
-import { ignores, imports, javascript, tailwindcss, typescript, vue } from './configs/index.ts'
+import {
+  ignores,
+  imports,
+  javascript,
+  stylistic,
+  tailwindcss,
+  typescript,
+  vue,
+} from './configs/index.ts'
 
 import type { Linter } from 'eslint'
 
@@ -19,7 +27,12 @@ export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]
     vue: enableVue = isPackageExists('vue'),
   } = options
 
-  const configs: Linter.Config[] = [ignores(userIgnores), imports(), ...javascript()]
+  const configs: Linter.Config[] = [
+    ignores(userIgnores),
+    imports(),
+    ...javascript(),
+    ...stylistic(),
+  ]
 
   if (enableTailwindcss) {
     configs.push(tailwindcss())

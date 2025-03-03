@@ -138,7 +138,6 @@ export function javascript(): Linter.Config[] {
         'prefer-numeric-literals': 'off',
         'prefer-promise-reject-errors': ['error', { allowEmptyReject: false }],
         'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
-        'quote-props': ['error', 'as-needed'], // TODO deprecated
         radix: 'off',
         'require-await': 'off',
         'require-unicode-regexp': 'off',
@@ -154,7 +153,6 @@ export function javascript(): Linter.Config[] {
         ],
         'sort-keys': 'off',
         'sort-vars': 'off',
-        'spaced-comment': ['error', 'always', { block: { balanced: true } }], // TODO deprecated
       },
     },
     {
