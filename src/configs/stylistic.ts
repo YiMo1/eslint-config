@@ -29,6 +29,7 @@ export function stylistic(): Linter.Config[] {
         '@stylistic/function-call-argument-newline': ['error', 'consistent'],
         '@stylistic/multiline-ternary': ['error', 'always-multiline'],
         '@stylistic/no-multiple-empty-lines': ['error', { max: 1 }],
+        '@stylistic/object-curly-newline': ['error', { multiline: true, consistent: true }],
       },
     },
   ]
