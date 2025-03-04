@@ -3,7 +3,7 @@ import { existsSync } from 'node:fs'
 
 import { configs, parser, plugin } from 'typescript-eslint'
 
-import { GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs.ts'
+import { GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs.ts'
 
 import type { ESLint, Linter } from 'eslint'
 
@@ -24,9 +24,6 @@ export function typescript(): Linter.Config[] {
           extraFileExtensions: ['.vue'],
         },
       },
-    },
-    {
-      ignores: [GLOB_JS, GLOB_JSX],
       rules: {
         ...configs.eslintRecommended.rules,
         ...configs.all[configs.all.length - 1].rules,
@@ -37,7 +34,7 @@ export function typescript(): Linter.Config[] {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/prefer-readonly-parameter-types': 'off',
         '@typescript-eslint/no-magic-numbers': 'off',
-        ...(enableType ? {} : configs.disableTypeChecked.rules),
+        ...enableType ? {} : configs.disableTypeChecked.rules,
       },
     },
   ]
