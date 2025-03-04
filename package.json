@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config",
+  "name": "@yimo/eslint-config",
   "type": "module",
   "version": "1.0.0",
   "description": "伊墨的eslint配置",
