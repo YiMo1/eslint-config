@@ -23,7 +23,10 @@
     "dist"
   ],
   "homepage": "https://github.com/YiMo1/eslint-config",
-  "repository": "https://github.com/YiMo1/eslint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/YiMo1/eslint-config.git"
+  },
   "bugs": "https://github.com/YiMo1/eslint-config/issues",
   "devDependencies": {
     "@types/eslint-plugin-tailwindcss": "^3.17.0",
