@@ -31,7 +31,7 @@ export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]
     ignores(userIgnores),
     imports(),
     ...javascript(),
-    ...stylistic(),
+    stylistic(),
   ]
 
   if (enableTailwindcss) {
