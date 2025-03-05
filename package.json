@@ -1,5 +1,5 @@
 {
-  "name": "@yimo/eslint-config",
+  "name": "eslint-config-yimo",
   "packageManager": "pnpm@10.3.0",
   "type": "module",
   "version": "1.0.0",
