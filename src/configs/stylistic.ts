@@ -38,7 +38,6 @@ export function stylistic(): Linter.Config {
           singleline: { delimiter: 'semi' },
         },
       ],
-      'stylistic/multiline-comment-style': 'error',
       'stylistic/multiline-ternary': ['error', 'always-multiline'],
       'stylistic/new-parens': 'error',
       'stylistic/newline-per-chained-call': 'error',
