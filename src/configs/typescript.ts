@@ -29,7 +29,6 @@ export function typescript(): Linter.Config[] {
       },
       rules: {
         ...configs.eslintRecommended.rules,
-        // eslint-disable-next-line ts/no-non-null-assertion
         ...renameRules(configs.all[configs.all.length - 1].rules!, maping),
         'ts/consistent-type-definitions': ['error', 'type'],
         'ts/no-unsafe-type-assertion': 'off',
@@ -38,7 +37,7 @@ export function typescript(): Linter.Config[] {
         'ts/explicit-module-boundary-types': 'off',
         'ts/prefer-readonly-parameter-types': 'off',
         'ts/no-magic-numbers': 'off',
-        // eslint-disable-next-line ts/no-non-null-assertion
+        'ts/no-non-null-assertion': 'off',
         ...enableType ? {} : renameRules(configs.disableTypeChecked.rules!, maping),
       },
     },
