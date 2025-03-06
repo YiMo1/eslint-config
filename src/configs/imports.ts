@@ -6,7 +6,7 @@ export function imports(): Linter.Config {
   return {
     plugins: { 'import-x': importX as unknown as ESLint.Plugin },
     rules: {
-      'import-x/no-deprecated': 'warn',
+      'import-x/no-deprecated': 'error',
       'import-x/no-empty-named-blocks': 'error',
       'import-x/no-mutable-exports': 'error',
       'import-x/no-named-as-default': 'error',
