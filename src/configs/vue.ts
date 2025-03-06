@@ -13,6 +13,7 @@ export function vue(): Linter.Config[] {
       languageOptions: { parserOptions: { parser: tsParser } },
       rules: {
         'no-undef': 'off', // ts(2304)
+        'no-useless-assignment': 'off', // template中使用eslint无法检测
         'vue/block-lang': ['error', { script: { lang: 'ts', allowNoLang: false } }],
         'vue/block-order': ['error', { order: ['script', 'template', 'style'] }],
         'vue/block-tag-newline': [
