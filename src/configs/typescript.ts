@@ -109,7 +109,17 @@ export function typescript(): Linter.Config[] {
           },
         ],
         'no-unused-vars': 'off',
-        'ts/no-unused-vars': 'error',
+        'ts/no-unused-vars': [
+          'error',
+          {
+            args: 'all',
+            ignoreRestSiblings: true,
+            argsIgnorePattern: '^_+$',
+            reportUsedIgnorePattern: true,
+            destructuredArrayIgnorePattern: '^_+$',
+            varsIgnorePattern: '^_+$',
+          },
+        ],
         'no-use-before-define': 'off',
         'ts/no-use-before-define': 'error',
         'no-useless-constructor': 'off',
