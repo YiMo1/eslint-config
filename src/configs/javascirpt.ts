@@ -166,6 +166,7 @@ export function javascript(): Linter.Config[] {
             argsIgnorePattern: '^_+$',
             reportUsedIgnorePattern: true,
             destructuredArrayIgnorePattern: '^_+$',
+            varsIgnorePattern: '^_+$',
           },
         ],
         'no-use-before-define': ['error', { classes: false, functions: false }],
