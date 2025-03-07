@@ -70,7 +70,7 @@ export function javascript(): Linter.Config[] {
         'no-ex-assign': 'error',
         'no-extend-native': 'error',
         'no-extra-bind': 'error',
-        'no-extra-boolean-cast': 'error',
+        'no-extra-boolean-cast': ['error', { enforceForInnerExpressions: true }],
         'no-extra-label': 'error',
         'no-fallthrough': 'error',
         'no-func-assign': 'error',
