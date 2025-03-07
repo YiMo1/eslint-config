@@ -103,6 +103,7 @@ export function stylistic(): Linter.Config {
         'error', {
           code: 100,
           tabWidth: 2,
+          ignoreUrls: true,
         },
       ],
     },
