@@ -99,7 +99,15 @@ export function typescript(): Linter.Config[] {
         'ts/no-unsafe-return': 'error',
         'ts/no-unsafe-unary-minus': 'error',
         'no-unused-expressions': 'off',
-        'ts/no-unused-expressions': 'error',
+        'ts/no-unused-expressions': [
+          'error',
+          {
+            allowShortCircuit: true,
+            allowTernary: true,
+            allowTaggedTemplates: true,
+            enforceForJSX: true,
+          },
+        ],
         'no-unused-vars': 'off',
         'ts/no-unused-vars': 'error',
         'no-use-before-define': 'off',
