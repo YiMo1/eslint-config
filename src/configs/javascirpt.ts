@@ -193,10 +193,7 @@ export function javascript(): Linter.Config[] {
           },
         ],
         'one-var': ['error', { initialized: 'never' }],
-        'prefer-arrow-callback': [
-          'error',
-          { allowNamedFunctions: false, allowUnboundThis: true },
-        ],
+        'prefer-arrow-callback': 'error',
         'prefer-const': [
           'error',
           { destructuring: 'all', ignoreReadBeforeAssign: true },

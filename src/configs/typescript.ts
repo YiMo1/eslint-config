@@ -27,6 +27,8 @@ export function typescript(): Linter.Config[] {
       },
       rules: {
         ...configs.eslintRecommended.rules,
+        'no-use-before-define': 'off', // ts(2448) & ts(2449) & ts(2450) & ts(2454)
+
         'ts/adjacent-overload-signatures': 'error',
         'ts/array-type': 'error',
         'ts/await-thenable': 'error',
@@ -93,7 +95,6 @@ export function typescript(): Linter.Config[] {
         'ts/no-unsafe-assignment': 'error',
         'ts/no-unsafe-call': 'error',
         'ts/no-unsafe-declaration-merging': 'error',
-        'ts/no-unsafe-enum-comparison': 'error',
         'ts/no-unsafe-function-type': 'error',
         'ts/no-unsafe-member-access': 'error',
         'ts/no-unsafe-return': 'error',
@@ -120,8 +121,6 @@ export function typescript(): Linter.Config[] {
             varsIgnorePattern: '^_+$',
           },
         ],
-        'no-use-before-define': 'off',
-        'ts/no-use-before-define': 'error',
         'no-useless-constructor': 'off',
         'ts/no-useless-constructor': 'error',
         'ts/no-useless-empty-export': 'error',
@@ -149,7 +148,6 @@ export function typescript(): Linter.Config[] {
         'ts/prefer-regexp-exec': 'error',
         'ts/prefer-return-this-type': 'error',
         'ts/prefer-string-starts-ends-with': 'error',
-        'ts/promise-function-async': 'error',
         'ts/related-getter-setter-pairs': 'error',
         'ts/require-array-sort-compare': 'error',
         'require-await': 'off',
@@ -162,7 +160,6 @@ export function typescript(): Linter.Config[] {
         'ts/switch-exhaustiveness-check': 'error',
         'ts/triple-slash-reference': 'error',
         'ts/typedef': 'error',
-        'ts/unbound-method': 'error',
         'ts/unified-signatures': 'error',
         'ts/use-unknown-in-catch-callback-variable': 'error',
         ...enableType

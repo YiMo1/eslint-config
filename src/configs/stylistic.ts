@@ -29,7 +29,6 @@ export function stylistic(): Linter.Config {
       'stylistic/key-spacing': 'error',
       'stylistic/keyword-spacing': 'error',
       'stylistic/linebreak-style': 'error',
-      'stylistic/lines-around-comment': 'error',
       'stylistic/lines-between-class-members': 'error',
       'stylistic/member-delimiter-style': [
         'error',
