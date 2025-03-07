@@ -169,7 +169,7 @@ export function javascript(): Linter.Config[] {
             varsIgnorePattern: '^_+$',
           },
         ],
-        'no-use-before-define': ['error', { classes: false, functions: false }],
+        'no-use-before-define': ['error', { classes: false, functions: false, variables: false }],
         'no-useless-assignment': 'error',
         'no-useless-backreference': 'error',
         'no-useless-call': 'error',
