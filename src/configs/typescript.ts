@@ -62,7 +62,6 @@ export function typescript(): Linter.Config[] {
         'ts/no-explicit-any': 'error',
         'ts/no-extra-non-null-assertion': 'error',
         'ts/no-extraneous-class': 'error',
-        'ts/no-floating-promises': 'error',
         'ts/no-for-in-array': 'error',
         'no-implied-eval': 'off',
         'ts/no-implied-eval': 'error',
