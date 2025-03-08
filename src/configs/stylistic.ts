@@ -29,7 +29,17 @@ export function stylistic(): Linter.Config {
       'stylistic/key-spacing': 'error',
       'stylistic/keyword-spacing': 'error',
       'stylistic/linebreak-style': 'error',
-      'stylistic/lines-between-class-members': 'error',
+      'stylistic/lines-between-class-members': [
+        'error',
+        {
+          enforce: [
+            { blankLine: 'never', prev: 'field', next: 'field' },
+            { blankLine: 'always', prev: 'method', next: 'method' },
+            { blankLine: 'always', prev: 'field', next: 'method' },
+            { blankLine: 'always', prev: 'method', next: 'field' },
+          ],
+        },
+      ],
       'stylistic/member-delimiter-style': [
         'error',
         {
