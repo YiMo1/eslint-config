@@ -156,7 +156,6 @@ export function typescript(): Linter.Config[] {
         'ts/restrict-template-expressions': 'error',
         'no-return-await': 'off',
         'ts/return-await': 'error',
-        'ts/strict-boolean-expressions': 'error',
         'ts/switch-exhaustiveness-check': 'error',
         'ts/triple-slash-reference': 'error',
         'ts/typedef': 'error',
