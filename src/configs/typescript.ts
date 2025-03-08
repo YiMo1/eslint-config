@@ -54,7 +54,6 @@ export function typescript(): Linter.Config[] {
         'ts/no-confusing-non-null-assertion': 'error',
         'ts/no-confusing-void-expression': 'error',
         'ts/no-deprecated': 'error',
-        'ts/no-dupe-class-members': 'error',
         'ts/no-duplicate-enum-values': 'error',
         'ts/no-duplicate-type-constituents': 'error',
         'ts/no-dynamic-delete': 'error',
