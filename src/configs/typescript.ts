@@ -45,7 +45,6 @@ export function typescript(): Linter.Config[] {
         'ts/default-param-last': 'error',
         'dot-notation': 'off',
         'ts/dot-notation': 'error',
-        'ts/member-ordering': 'error',
         'ts/method-signature-style': 'error',
         'no-array-constructor': 'off',
         'ts/no-array-constructor': 'error',
