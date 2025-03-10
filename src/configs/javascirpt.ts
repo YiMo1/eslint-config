@@ -201,7 +201,7 @@ export function javascript(): Linter.Config[] {
         'prefer-exponentiation-operator': 'error',
         'prefer-object-has-own': 'error',
         'prefer-object-spread': 'error',
-        'prefer-promise-reject-errors': ['error', { allowEmptyReject: false }],
+        'prefer-promise-reject-errors': 'error',
         'prefer-regex-literals': ['error', { disallowRedundantWrapping: true }],
         'prefer-rest-params': 'error',
         'prefer-spread': 'error',
