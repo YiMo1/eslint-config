@@ -17,6 +17,17 @@ export function vue(): Linter.Config[] {
         'vue/multi-word-component-names': 'off',
         'vue/max-attributes-per-line': 'off',
 
+        'vue/html-closing-bracket-newline': [
+          'error',
+          {
+            singleline: 'never',
+            multiline: 'always',
+            selfClosingTag: {
+              singleline: 'never',
+              multiline: 'never',
+            },
+          },
+        ],
         'vue/block-lang': ['error', { script: { lang: 'ts', allowNoLang: false } }],
         'vue/block-order': ['error', { order: ['script', 'template', 'style'] }],
         'vue/block-tag-newline': [
