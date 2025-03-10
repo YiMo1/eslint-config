@@ -14,6 +14,9 @@ export function vue(): Linter.Config[] {
       rules: {
         'no-undef': 'off', // ts(2304)
         'no-useless-assignment': 'off', // template中使用eslint无法检测
+        'vue/multi-word-component-names': 'off',
+        'vue/max-attributes-per-line': 'off',
+
         'vue/block-lang': ['error', { script: { lang: 'ts', allowNoLang: false } }],
         'vue/block-order': ['error', { order: ['script', 'template', 'style'] }],
         'vue/block-tag-newline': [
@@ -63,7 +66,6 @@ export function vue(): Linter.Config[] {
         'vue/prefer-prop-type-boolean-first': 'error',
         'vue/prefer-define-options': 'error',
         'vue/prefer-true-attribute-shorthand': 'error',
-        'vue/multi-word-component-names': 'off',
         'vue/padding-line-between-blocks': 'error',
       },
     },
