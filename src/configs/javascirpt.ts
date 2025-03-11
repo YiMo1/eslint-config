@@ -187,7 +187,7 @@ export function javascript(): Linter.Config[] {
           'error',
           'always',
           {
-            avoidQuotes: false,
+            avoidQuotes: true,
             ignoreConstructors: false,
             avoidExplicitReturnArrows: true,
           },
