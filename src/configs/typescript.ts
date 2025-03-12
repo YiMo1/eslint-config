@@ -28,6 +28,7 @@ export function typescript(): Linter.Config[] {
       rules: {
         ...configs.eslintRecommended.rules,
         'no-use-before-define': 'off', // ts(2448) & ts(2449) & ts(2450) & ts(2454)
+        'import-x/named': 'off', // ts(2305)
 
         ...closeBaseRules({
           'ts/default-param-last': 'error',
