@@ -58,7 +58,6 @@ export function typescript(): Linter.Config[] {
           ],
           'ts/no-useless-constructor': 'error',
           'ts/only-throw-error': { source: 'no-throw-literal', ruleEntry: 'error' },
-          'ts/prefer-destructuring': 'error',
           'ts/prefer-promise-reject-errors': 'error',
           'ts/require-await': 'error',
           'ts/return-await': { source: 'no-return-await', ruleEntry: 'error' },
