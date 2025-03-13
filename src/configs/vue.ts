@@ -57,7 +57,6 @@ export function vue(): Linter.Config[] {
         'vue/no-empty-pattern': 'error',
         'vue/no-useless-concat': 'error',
         'vue/no-irregular-whitespace': 'error',
-        'vue/no-console': ['error', { allow: ['warn', 'error'] }],
         'vue/no-constant-condition': 'error',
         'vue/dot-notation': 'error',
         'vue/no-sparse-arrays': 'error',

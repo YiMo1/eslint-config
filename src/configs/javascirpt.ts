@@ -48,7 +48,6 @@ export function javascript(): Linter.Config[] {
         'no-class-assign': 'error',
         'no-compare-neg-zero': 'error',
         'no-cond-assign': 'error',
-        'no-console': ['error', { allow: ['warn', 'error'] }],
         'no-const-assign': 'error',
         'no-constant-binary-expression': 'error',
         'no-constant-condition': 'error',
