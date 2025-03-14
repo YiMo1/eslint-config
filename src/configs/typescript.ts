@@ -115,7 +115,6 @@ export function typescript(): Linter.Config[] {
         'ts/no-unsafe-assignment': 'error',
         'ts/no-unsafe-call': 'error',
         'ts/no-unsafe-declaration-merging': 'error',
-        'ts/no-unsafe-function-type': 'error',
         'ts/no-unsafe-member-access': 'error',
         'ts/no-unsafe-return': 'error',
         'ts/no-unsafe-unary-minus': 'error',
