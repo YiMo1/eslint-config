@@ -34,7 +34,6 @@ export function typescript(): Linter.Config[] {
           'ts/default-param-last': 'error',
           'ts/dot-notation': 'error',
           'ts/no-array-constructor': 'error',
-          'ts/no-implied-eval': 'error',
           'ts/no-restricted-imports': 'error',
           'ts/no-unused-expressions': [
             'error',
