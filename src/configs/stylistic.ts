@@ -42,10 +42,7 @@ export function stylistic(): Linter.Config {
       ],
       'stylistic/member-delimiter-style': [
         'error',
-        {
-          multiline: { delimiter: 'none' },
-          singleline: { delimiter: 'semi' },
-        },
+        { multiline: { delimiter: 'none' }, singleline: { delimiter: 'semi' } },
       ],
       'stylistic/multiline-ternary': ['error', 'always-multiline'],
       'stylistic/new-parens': 'error',
@@ -55,24 +52,11 @@ export function stylistic(): Linter.Config {
       'stylistic/no-extra-semi': 'error',
       'stylistic/no-floating-decimal': 'error',
       'stylistic/no-multi-spaces': 'error',
-      'stylistic/no-multiple-empty-lines': [
-        'error',
-        {
-          max: 1,
-          maxEOF: 0,
-          maxBOF: 0,
-        },
-      ],
+      'stylistic/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
       'stylistic/no-trailing-spaces': 'error',
       'stylistic/no-whitespace-before-property': 'error',
       'stylistic/nonblock-statement-body-position': 'error',
-      'stylistic/object-curly-newline': [
-        'error',
-        {
-          multiline: true,
-          consistent: true,
-        },
-      ],
+      'stylistic/object-curly-newline': ['error', { multiline: true, consistent: true }],
       'stylistic/object-curly-spacing': ['error', 'always'],
       'stylistic/one-var-declaration-per-line': 'error',
       'stylistic/operator-linebreak': 'error',
@@ -86,20 +70,12 @@ export function stylistic(): Linter.Config {
       'stylistic/space-before-blocks': 'error',
       'stylistic/space-before-function-paren': [
         'error',
-        {
-          named: 'never',
-          anonymous: 'never',
-          asyncArrow: 'always',
-        },
+        { named: 'never', anonymous: 'never', asyncArrow: 'always' },
       ],
       'stylistic/space-in-parens': 'error',
       'stylistic/space-infix-ops': 'error',
       'stylistic/space-unary-ops': 'error',
-      'stylistic/spaced-comment': [
-        'error',
-        'always',
-        { block: { balanced: true } },
-      ],
+      'stylistic/spaced-comment': ['error', 'always', { block: { balanced: true } }],
       'stylistic/switch-colon-spacing': 'error',
       'stylistic/template-curly-spacing': 'error',
       'stylistic/template-tag-spacing': 'error',
@@ -109,13 +85,8 @@ export function stylistic(): Linter.Config {
       'stylistic/wrap-iife': 'error',
       'stylistic/wrap-regex': 'error',
       'stylistic/yield-star-spacing': 'error',
-      'stylistic/max-len': [
-        'error', {
-          code: 100,
-          tabWidth: 2,
-          ignoreUrls: true,
-        },
-      ],
+      'stylistic/max-len': ['error', { code: 100, tabWidth: 2, ignoreUrls: true }],
+      'stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
     },
   }
 }
