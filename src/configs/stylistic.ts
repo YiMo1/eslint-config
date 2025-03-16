@@ -87,6 +87,7 @@ export function stylistic(): Linter.Config {
       'stylistic/yield-star-spacing': 'error',
       'stylistic/max-len': ['error', { code: 100, tabWidth: 2, ignoreUrls: true }],
       'stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
+      'stylistic/jsx-one-expression-per-line': ['error', { allow: 'single-line' }],
     },
   }
 }
