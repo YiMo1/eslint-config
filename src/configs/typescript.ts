@@ -119,7 +119,6 @@ export function typescript(): Linter.Config[] {
         'ts/no-useless-empty-export': 'error',
         'ts/no-wrapper-object-types': 'error',
         'ts/non-nullable-type-assertion-style': 'error',
-        'ts/parameter-properties': 'error',
         'ts/prefer-as-const': 'error',
         'ts/prefer-enum-initializers': 'error',
         'ts/prefer-find': 'error',
