@@ -44,5 +44,8 @@
     "globals": "^16.0.0",
     "local-pkg": "^1.1.0",
     "typescript-eslint": "^8.25.0"
+  },
+  "engines": {
+    "node": "^20.18.0"
   }
 }
