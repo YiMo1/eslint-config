@@ -25,7 +25,7 @@ export function stylistic(): Linter.Config {
       'stylistic/generator-star-spacing': 'error',
       'stylistic/implicit-arrow-linebreak': 'error',
       'stylistic/indent': ['error', 2],
-      'stylistic/indent-binary-ops': 'error',
+      'stylistic/indent-binary-ops': ['error', 2],
       'stylistic/key-spacing': 'error',
       'stylistic/keyword-spacing': 'error',
       'stylistic/linebreak-style': 'error',
