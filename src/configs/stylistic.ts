@@ -66,7 +66,7 @@ export function stylistic(): Linter.Config {
       'stylistic/rest-spread-spacing': 'error',
       'stylistic/semi': ['error', 'never'],
       'stylistic/semi-spacing': 'error',
-      'stylistic/semi-style': 'error',
+      'stylistic/semi-style': ['error', 'first'],
       'stylistic/space-before-blocks': 'error',
       'stylistic/space-before-function-paren': [
         'error',
