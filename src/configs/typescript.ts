@@ -112,7 +112,7 @@ export function typescript(): Linter.Config[] {
         'ts/prefer-enum-initializers': 'error',
         'ts/prefer-for-of': 'error',
         'ts/prefer-function-type': 'error',
-        'ts/prefer-literal-enum-member': 'error',
+        'ts/prefer-literal-enum-member': ['error', { allowBitwiseExpressions: true }],
         'ts/prefer-namespace-keyword': 'error',
         'ts/prefer-nullish-coalescing': 'error',
         'ts/prefer-optional-chain': 'error',
