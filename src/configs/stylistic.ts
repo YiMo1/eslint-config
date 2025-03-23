@@ -88,6 +88,21 @@ export function stylistic(): Linter.Config {
       'stylistic/max-len': ['error', { code: 100, tabWidth: 2, ignoreUrls: true }],
       'stylistic/jsx-self-closing-comp': ['error', { component: true, html: true }],
       'stylistic/jsx-one-expression-per-line': ['error', { allow: 'single-line' }],
+      'stylistic/jsx-indent': [
+        'error', 2, {
+          checkAttributes: true,
+          indentLogicalExpressions: true,
+        },
+      ],
+      'stylistic/jsx-wrap-multilines': ['error', { condition: 'parens-new-line' }],
+      'stylistic/jsx-indent-props': ['error', 2],
+      'stylistic/jsx-sort-props': [
+        'error', {
+          ignoreCase: true,
+          callbacksLast: true,
+          shorthandFirst: true,
+        },
+      ],
     },
   }
 }
