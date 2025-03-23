@@ -224,6 +224,7 @@ export function javascript(): Linter.Config[] {
         'valid-typeof': ['error', { requireStringLiterals: true }],
         'vars-on-top': 'error',
         yoda: 'error',
+        'no-implied-eval': 'error',
       },
     },
     {

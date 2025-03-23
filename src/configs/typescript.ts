@@ -33,6 +33,7 @@ export function typescript(): Linter.Config[] {
         ...closeBaseRules({
           'ts/default-param-last': 'error',
           'ts/no-array-constructor': 'error',
+          'ts/no-implied-eval': 'error',
           'ts/no-restricted-imports': 'error',
           'ts/no-unused-expressions': [
             'error',
