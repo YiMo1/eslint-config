@@ -131,7 +131,6 @@ export function javascript(): Linter.Config[] {
         'no-sparse-arrays': 'error',
         'no-template-curly-in-string': 'error',
         'no-this-before-super': 'error',
-        'no-throw-literal': 'error',
         'no-undef': 'error',
         'no-undef-init': 'error',
         'no-unexpected-multiline': 'error',
