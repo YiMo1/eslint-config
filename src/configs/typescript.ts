@@ -76,7 +76,7 @@ export function typescript(): Linter.Config[] {
         'ts/no-base-to-string': 'error',
         'ts/no-confusing-non-null-assertion': 'error',
         'ts/no-confusing-void-expression': 'error',
-        'ts/no-deprecated': 'error',
+        'ts/no-deprecated': 'warn',
         'ts/no-duplicate-enum-values': 'error',
         'ts/no-duplicate-type-constituents': 'error',
         'ts/no-dynamic-delete': 'error',
