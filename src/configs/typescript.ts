@@ -58,6 +58,7 @@ export function typescript(): Linter.Config[] {
           'ts/prefer-promise-reject-errors': 'error',
           'ts/return-await': { source: 'no-return-await', ruleEntry: 'error' },
         }),
+        'ts/no-namespace': 'error',
         'ts/adjacent-overload-signatures': 'error',
         'ts/array-type': 'error',
         'ts/ban-ts-comment': 'error',
