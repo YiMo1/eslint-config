@@ -32,7 +32,6 @@ export function typescript(): Linter.Config[] {
 
         ...closeBaseRules({
           'ts/default-param-last': 'error',
-          'ts/dot-notation': 'error',
           'ts/no-array-constructor': 'error',
           'ts/no-restricted-imports': 'error',
           'ts/no-unused-expressions': [
@@ -71,7 +70,6 @@ export function typescript(): Linter.Config[] {
         'ts/consistent-indexed-object-style': 'error',
         'ts/consistent-type-assertions': 'error',
         'ts/consistent-type-definitions': ['error', 'type'],
-        'ts/consistent-type-exports': 'error',
         'ts/consistent-type-imports': 'error',
         'ts/method-signature-style': 'error',
         'ts/no-array-delete': 'error',
