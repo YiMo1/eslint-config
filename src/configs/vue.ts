@@ -3,9 +3,13 @@ import { parser as tsParser } from 'typescript-eslint'
 
 import { GLOB_VUE } from '../globs.ts'
 
+import type { Overwrite } from '../type.ts'
 import type { Linter } from 'eslint'
 
-export function vue(): Linter.Config[] {
+export type VueOptions = Overwrite
+
+export function vue(options: VueOptions = {}): Linter.Config[] {
+  const { overwrite = {} } = options
   return [
     ...plugin.configs['flat/recommended'],
     {
@@ -123,6 +127,7 @@ export function vue(): Linter.Config[] {
         'vue/prefer-define-options': 'error',
         'vue/prefer-true-attribute-shorthand': 'error',
         'vue/padding-line-between-blocks': 'error',
+        ...overwrite,
       },
     },
   ]

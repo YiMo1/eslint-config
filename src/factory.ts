@@ -1,7 +1,12 @@
 import { isPackageExists } from 'local-pkg'
 
 import {
+  type ImportsOptions,
+  type JavascriptOptions,
+  type StylisticOptions,
+  type TailwindcssOptions,
   type TypescriptOptions,
+  type VueOptions,
   ignores,
   imports,
   javascript,
@@ -15,9 +20,12 @@ import type { Linter } from 'eslint'
 
 export type YimoOptions = {
   ignores?: string[]
-  tailwindcss?: boolean
+  tailwindcss?: boolean | TailwindcssOptions
   ts?: boolean | TypescriptOptions
-  vue?: boolean
+  vue?: boolean | VueOptions
+  stylistic?: StylisticOptions
+  js?: JavascriptOptions
+  imports?: ImportsOptions
 }
 
 export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]) {
@@ -26,17 +34,21 @@ export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]
     tailwindcss: enableTailwindcss = isPackageExists('tailwindcss'),
     ts: enableTs = isPackageExists('typescript'),
     vue: enableVue = isPackageExists('vue'),
+    stylistic: stylisticOptions = {},
+    js: jsOptions = {},
+    imports: importsOptions = {},
   } = options
 
   const configs: Linter.Config[] = [
     ignores(userIgnores),
-    imports(),
-    ...javascript(),
-    stylistic(),
+    imports(importsOptions),
+    ...javascript(jsOptions),
+    stylistic(stylisticOptions),
   ]
 
   if (enableTailwindcss) {
-    configs.push(tailwindcss())
+    const options = typeof enableTailwindcss == 'boolean' ? {} : enableTailwindcss
+    configs.push(tailwindcss(options))
   }
 
   if (enableTs) {
@@ -45,7 +57,8 @@ export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]
   }
 
   if (enableVue) {
-    configs.push(...vue())
+    const options = typeof enableVue == 'boolean' ? {} : enableVue
+    configs.push(...vue(options))
   }
 
   return configs.concat(extraConfigs)

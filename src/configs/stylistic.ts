@@ -1,8 +1,12 @@
 import plugin from '@stylistic/eslint-plugin'
 
 import type { Linter } from 'eslint'
+import type { Overwrite } from '../type.ts'
 
-export function stylistic(): Linter.Config {
+export type StylisticOptions = Overwrite
+
+export function stylistic(options: StylisticOptions = {}): Linter.Config {
+  const { overwrite = {} } = options
   return {
     plugins: { stylistic: plugin },
     rules: {
@@ -103,6 +107,7 @@ export function stylistic(): Linter.Config {
           shorthandFirst: true,
         },
       ],
+      ...overwrite,
     },
   }
 }

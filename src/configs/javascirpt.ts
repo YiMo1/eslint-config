@@ -3,8 +3,12 @@ import globals from 'globals'
 import { GLOB_JSX } from '../globs.ts'
 
 import type { Linter } from 'eslint'
+import type { Overwrite } from '../type.ts'
 
-export function javascript(): Linter.Config[] {
+export type JavascriptOptions = Overwrite
+
+export function javascript(options: JavascriptOptions = {}): Linter.Config[] {
+  const { overwrite = {} } = options
   return [
     {
       languageOptions: {
@@ -224,6 +228,7 @@ export function javascript(): Linter.Config[] {
         'valid-typeof': ['error', { requireStringLiterals: true }],
         yoda: 'error',
         'no-implied-eval': 'error',
+        ...overwrite,
       },
     },
     {

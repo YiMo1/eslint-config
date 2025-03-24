@@ -1,8 +1,11 @@
 import importX from 'eslint-plugin-import-x'
 
 import type { ESLint, Linter } from 'eslint'
+import type { Overwrite } from '../type.ts'
 
-export function imports(): Linter.Config {
+export type ImportsOptions = Overwrite
+export function imports(options: ImportsOptions = {}): Linter.Config {
+  const { overwrite = {} } = options
   return {
     plugins: { 'import-x': importX as unknown as ESLint.Plugin },
     rules: {
@@ -32,6 +35,7 @@ export function imports(): Linter.Config {
       ],
       'import-x/no-duplicates': ['error', { 'prefer-inline': true }],
       'import-x/named': 'error',
+      ...overwrite,
     },
     settings: {
       'import-x/extensions': ['.js', '.jsx'],

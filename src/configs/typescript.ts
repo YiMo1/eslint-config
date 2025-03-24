@@ -6,14 +6,16 @@ import { configs, parser, plugin } from 'typescript-eslint'
 import { GLOB_TS, GLOB_TSX, GLOB_VUE } from '../globs.ts'
 import { closeBaseRules, renameRules } from '../tool.ts'
 
+import type { Overwrite } from '../type.ts'
 import type { ESLint, Linter } from 'eslint'
 
-export type TypescriptOptions = {
+export type TypescriptOptions = Overwrite & {
   enableType?: boolean
 }
 export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
   const {
     enableType = existsSync(join(process.cwd(), 'tsconfig.json')),
+    overwrite = {},
   } = options
 
   return [
@@ -130,6 +132,7 @@ export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
         ...enableType
           ? {}
           : renameRules(configs.disableTypeChecked.rules!, { '@typescript-eslint': 'ts' }),
+        ...overwrite,
       },
     },
   ]
