@@ -222,7 +222,6 @@ export function javascript(): Linter.Config[] {
           { enforceForSwitchCase: true, enforceForIndexOf: true },
         ],
         'valid-typeof': ['error', { requireStringLiterals: true }],
-        'vars-on-top': 'error',
         yoda: 'error',
         'no-implied-eval': 'error',
       },
