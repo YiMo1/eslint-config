@@ -8,7 +8,8 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "lint": "eslint --fix"
+    "lint": "eslint --fix",
+    "release": "tsx ./scripts/release.ts"
   },
   "keywords": [
     "eslint"
