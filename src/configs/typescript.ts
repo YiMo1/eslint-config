@@ -8,8 +8,13 @@ import { closeBaseRules, renameRules } from '../tool.ts'
 
 import type { ESLint, Linter } from 'eslint'
 
-export function typescript(): Linter.Config[] {
-  const enableType = existsSync(join(process.cwd(), 'tsconfig.json'))
+export type TypescriptOptions = {
+  enableType?: boolean
+}
+export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
+  const {
+    enableType = existsSync(join(process.cwd(), 'tsconfig.json')),
+  } = options
 
   return [
     { plugins: { ts: plugin as ESLint.Plugin } },

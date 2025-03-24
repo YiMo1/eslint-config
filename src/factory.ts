@@ -1,6 +1,7 @@
 import { isPackageExists } from 'local-pkg'
 
 import {
+  type TypescriptOptions,
   ignores,
   imports,
   javascript,
@@ -15,7 +16,7 @@ import type { Linter } from 'eslint'
 export type YimoOptions = {
   ignores?: string[]
   tailwindcss?: boolean
-  ts?: boolean
+  ts?: boolean | TypescriptOptions
   vue?: boolean
 }
 
@@ -39,7 +40,8 @@ export function yimo(options: YimoOptions = {}, ...extraConfigs: Linter.Config[]
   }
 
   if (enableTs) {
-    configs.push(...typescript())
+    const options = typeof enableTs == 'boolean' ? {} : enableTs
+    configs.push(...typescript(options))
   }
 
   if (enableVue) {
