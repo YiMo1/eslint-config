@@ -65,7 +65,7 @@ export function stylistic(options: StylisticOptions = {}): Linter.Config {
       'stylistic/operator-linebreak': 'error',
       'stylistic/padding-line-between-statements': 'error',
       'stylistic/quote-props': ['error', 'as-needed'],
-      'stylistic/quotes': ['error', 'single'],
+      'stylistic/quotes': ['error', 'single', { allowTemplateLiterals: 'always' }],
       'stylistic/rest-spread-spacing': 'error',
       'stylistic/semi': ['error', 'never'],
       'stylistic/semi-spacing': 'error',
