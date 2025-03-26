@@ -65,6 +65,7 @@ export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
           'ts/no-useless-constructor': 'error',
           'ts/prefer-promise-reject-errors': 'error',
           'ts/return-await': { source: 'no-return-await', ruleEntry: 'error' },
+          'ts/only-throw-error': { source: 'no-throw-literal', ruleEntry: 'error' },
         }),
         'ts/no-namespace': 'error',
         'ts/adjacent-overload-signatures': 'error',

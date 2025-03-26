@@ -229,6 +229,7 @@ export function javascript(options: JavascriptOptions = {}): Linter.Config[] {
         yoda: 'error',
         'no-implied-eval': 'error',
         curly: 'error',
+        'no-throw-literal': 'error',
         ...overwrite,
       },
     },
