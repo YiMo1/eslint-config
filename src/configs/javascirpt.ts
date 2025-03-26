@@ -228,6 +228,7 @@ export function javascript(options: JavascriptOptions = {}): Linter.Config[] {
         'valid-typeof': ['error', { requireStringLiterals: true }],
         yoda: 'error',
         'no-implied-eval': 'error',
+        curly: 'error',
         ...overwrite,
       },
     },
