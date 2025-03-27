@@ -55,7 +55,7 @@ export function stylistic(options: StylisticOptions = {}): Linter.Config {
       'stylistic/no-extra-parens': ['error', 'all', { ignoreJSX: 'multi-line' }],
       'stylistic/no-extra-semi': 'error',
       'stylistic/no-floating-decimal': 'error',
-      'stylistic/no-multi-spaces': 'error',
+      'stylistic/no-multi-spaces': ['error', { exceptions: { Property: false } }],
       'stylistic/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
       'stylistic/no-trailing-spaces': 'error',
       'stylistic/no-whitespace-before-property': 'error',
