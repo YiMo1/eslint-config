@@ -106,6 +106,7 @@ export function stylistic(options: StylisticOptions = {}): Linter.Config {
           shorthandFirst: true,
         },
       ],
+      'stylistic/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
       ...overwrite,
     },
   }
