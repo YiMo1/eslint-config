@@ -108,6 +108,13 @@ export function stylistic(options: StylisticOptions = {}): Linter.Config {
       ],
       'stylistic/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
       'stylistic/jsx-closing-bracket-location': ['error', 'after-props'],
+      'stylistic/jsx-curly-brace-presence': [
+        'error', {
+          props: 'never',
+          children: 'never',
+          propElementValues: 'always',
+        },
+      ],
       ...overwrite,
     },
   }
