@@ -115,6 +115,14 @@ export function stylistic(options: StylisticOptions = {}): Linter.Config {
           propElementValues: 'always',
         },
       ],
+      'stylistic/jsx-curly-spacing': [
+        'error', {
+          when: 'never',
+          children: true,
+          allowMultiline: false,
+        },
+      ],
+      'stylistic/jsx-equals-spacing': ['error', 'never'],
       ...overwrite,
     },
   }
