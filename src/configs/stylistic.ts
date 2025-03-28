@@ -97,7 +97,18 @@ export function stylistic(options: StylisticOptions = {}): Linter.Config {
           indentLogicalExpressions: true,
         },
       ],
-      'stylistic/jsx-wrap-multilines': ['error', { condition: 'parens-new-line' }],
+      'stylistic/jsx-wrap-multilines': [
+        'error', {
+          declaration: 'parens-new-line',
+          assignment: 'parens-new-line',
+          return: 'parens-new-line',
+          arrow: 'parens-new-line',
+          condition: 'parens-new-line',
+          logical: 'parens-new-line',
+          prop: 'parens-new-line',
+          propertyValue: 'parens-new-line',
+        },
+      ],
       'stylistic/jsx-indent-props': ['error', 2],
       'stylistic/jsx-sort-props': [
         'error', {
