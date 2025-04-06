@@ -50,7 +50,6 @@ export function stylistic(options: StylisticOptions = {}): Linter.Config {
       ],
       'stylistic/multiline-ternary': ['error', 'always-multiline'],
       'stylistic/new-parens': 'error',
-      'stylistic/no-confusing-arrow': 'error',
       'stylistic/no-extra-parens': ['error', 'all', { ignoreJSX: 'multi-line' }],
       'stylistic/no-extra-semi': 'error',
       'stylistic/no-floating-decimal': 'error',
