@@ -77,7 +77,6 @@ export function vue(options: VueOptions = {}): Linter.Config[] {
             },
           },
         ],
-        'vue/block-lang': ['error', { script: { lang: 'ts', allowNoLang: false } }],
         'vue/block-order': ['error', { order: ['script', 'template', 'style'] }],
         'vue/block-tag-newline': [
           'error',
