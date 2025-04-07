@@ -76,7 +76,6 @@ export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
         'ts/consistent-generic-constructors': 'error',
         'ts/consistent-indexed-object-style': 'error',
         'ts/consistent-type-assertions': 'error',
-        'ts/consistent-type-definitions': ['error', 'type'],
         'ts/consistent-type-imports': 'error',
         'ts/method-signature-style': 'error',
         'ts/no-confusing-non-null-assertion': 'error',
