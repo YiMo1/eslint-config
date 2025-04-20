@@ -105,7 +105,6 @@ export function vue(options: VueOptions = {}): Linter.Config[] {
         'vue/no-deprecated-delete-set': 'error',
         'vue/no-deprecated-model-definition': 'error',
         'vue/no-duplicate-attr-inheritance': 'error',
-        'vue/no-empty-component-block': 'error',
         'vue/no-multiple-objects-in-class': 'error',
         'vue/no-required-prop-with-default': 'error',
         'vue/v-for-delimiter-style': 'error',
