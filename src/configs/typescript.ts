@@ -70,7 +70,6 @@ export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
         'ts/no-namespace': 'error',
         'ts/adjacent-overload-signatures': 'error',
         'ts/array-type': 'error',
-        'ts/ban-tslint-comment': 'error',
         'ts/class-literal-property-style': 'error',
         'ts/consistent-generic-constructors': 'error',
         'ts/consistent-indexed-object-style': 'error',
