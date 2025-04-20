@@ -124,7 +124,6 @@ export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
         'ts/prefer-regexp-exec': 'error',
         'ts/prefer-return-this-type': 'error',
         'ts/related-getter-setter-pairs': 'error',
-        'ts/switch-exhaustiveness-check': 'error',
         'ts/triple-slash-reference': 'error',
         'ts/unified-signatures': 'error',
         ...enableType
