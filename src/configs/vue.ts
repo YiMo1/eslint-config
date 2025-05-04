@@ -126,6 +126,7 @@ export function vue(options: VueOptions = {}): Linter.Config[] {
         'vue/prefer-true-attribute-shorthand': 'error',
         'vue/padding-line-between-blocks': 'error',
         'vue/singleline-html-element-content-newline': 'off',
+        'vue/require-default-prop': 'off',
         ...overwrite,
       },
     },
