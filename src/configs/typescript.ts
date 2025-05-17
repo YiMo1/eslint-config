@@ -82,7 +82,6 @@ export function typescript(options: TypescriptOptions = {}): Linter.Config[] {
         'ts/no-duplicate-type-constituents': 'error',
         'ts/no-dynamic-delete': 'error',
         'ts/no-extra-non-null-assertion': 'error',
-        'ts/no-extraneous-class': 'error',
         'ts/no-import-type-side-effects': 'error',
         'ts/no-inferrable-types': 'error',
         'ts/no-misused-new': 'error',
