@@ -1,16 +1,14 @@
+import { execSync } from 'node:child_process'
 import { writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { execSync } from 'node:child_process'
 
 import inquirer from 'inquirer'
-import { loadPackageJSONSync } from 'local-pkg'
+import pkgJson from '../package.json'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const pkgJson = loadPackageJSONSync()!
-const version = pkgJson.version!.split('.').
-  map((item) => Number(item)) as [major: number, minor: number, patch: number]
+const version = pkgJson.version!.split('.').map(item => Number(item)) as [major: number, minor: number, patch: number]
 
 const answer = await inquirer.prompt([
   {

@@ -1,5 +1,4 @@
+import './type.ts'
+
 export { yimo } from './factory.ts'
-export * from './globs.ts'
-export * from './configs/index.ts'
-export * from './tool.ts'
-export * as plugin from './plugin.ts'
+export * from '@antfu/eslint-config'

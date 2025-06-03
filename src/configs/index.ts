@@ -1,7 +1,0 @@
-export * from './ignores.ts'
-export * from './imports.ts'
-export * from './tailwindcss.ts'
-export * from './javascirpt.ts'
-export * from './typescript.ts'
-export * from './vue.ts'
-export * from './stylistic.ts'

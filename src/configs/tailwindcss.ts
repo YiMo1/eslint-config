@@ -1,11 +1,8 @@
+import type { OptionsOverrides } from '@antfu/eslint-config'
+import type { ESLint, Linter } from 'eslint'
 import plugin from 'eslint-plugin-tailwindcss'
 
-import type { ESLint, Linter } from 'eslint'
-import type { Overwrite } from '../type.ts'
-
-export type TailwindcssOptions = Overwrite
-export function tailwindcss(options: TailwindcssOptions = {}): Linter.Config {
-  const { overwrite = {} } = options
+export function tailwindcss(options: OptionsOverrides = {}): Linter.Config {
   return {
     plugins: { tailwindcss: plugin as ESLint.Plugin },
     rules: {
@@ -14,7 +11,7 @@ export function tailwindcss(options: TailwindcssOptions = {}): Linter.Config {
       'tailwindcss/classnames-order': 'error',
       'tailwindcss/no-unnecessary-arbitrary-value': 'error',
       'tailwindcss/no-contradicting-classname': 'error',
-      ...overwrite,
+      ...options.overrides,
     },
   }
 }
