@@ -1,4 +1,5 @@
 import { antfu, isPackageInScope, resolveSubOptions } from '@antfu/eslint-config'
+
 import { tailwindcss } from './configs/tailwindcss.ts'
 
 export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu> {
@@ -13,6 +14,16 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
   options.rules = {
     'style/max-statements-per-line': ['error', { max: 1, ignoredNodes: ['BreakStatement'] }],
     'antfu/if-newline': 'off',
+    'perfectionist/sort-imports': ['error', {
+      groups: [
+        'builtin',
+        'external',
+        ['internal', 'parent', 'sibling', 'index'],
+        'style',
+        'type',
+      ],
+      type: 'natural',
+    }],
     ...options.rules,
   }
 
