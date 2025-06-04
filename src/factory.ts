@@ -9,5 +9,10 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
     userConfigs = [tailwindcss(resolveSubOptions(options, 'tailwindcss')), ...userConfigs]
   }
 
+  options = {
+    formatters: true,
+    ...options,
+  }
+
   return antfu(options, ...userConfigs)
 }
