@@ -11,7 +11,7 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
 
   options.formatters = options.formatters ?? true
   options.rules = {
-    'style/max-statements-per-line': ['error', { max: 1, ignoredNodes: ['BreakStatement', 'ReturnStatement'] }],
+    'style/max-statements-per-line': ['error', { max: 1, ignoredNodes: ['BreakStatement'] }],
     'antfu/if-newline': 'off',
     ...options.rules,
   }
