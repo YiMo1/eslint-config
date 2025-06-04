@@ -9,9 +9,11 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
     userConfigs = [tailwindcss(resolveSubOptions(options, 'tailwindcss')), ...userConfigs]
   }
 
-  options = {
-    formatters: true,
-    ...options,
+  options.formatters = options.formatters ?? true
+  options.rules = {
+    'style/max-statements-per-line': ['error', { max: 1, ignoredNodes: ['BreakStatement', 'ReturnStatement'] }],
+    'antfu/if-newline': 'off',
+    ...options.rules,
   }
 
   return antfu(options, ...userConfigs)
