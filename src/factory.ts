@@ -24,6 +24,7 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
       ],
       type: 'natural',
     }],
+    'ts/no-use-before-define': 'off',
     ...options.rules,
   }
 
