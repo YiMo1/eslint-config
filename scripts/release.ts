@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import inquirer from 'inquirer'
+
 import pkgJson from '../package.json'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))

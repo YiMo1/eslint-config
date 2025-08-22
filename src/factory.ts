@@ -1,10 +1,10 @@
-import { antfu, isPackageInScope, resolveSubOptions } from '@antfu/eslint-config'
+import { antfu, isInEditorEnv, isPackageInScope, resolveSubOptions } from '@antfu/eslint-config'
 
 import { tailwindcss } from './configs/tailwindcss.ts'
 
 export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu> {
   let [options = {}, ...userConfigs] = args
-  const { tailwindcss: enableTailwindcss = isPackageInScope('tailwindcss') } = options
+  const { tailwindcss: enableTailwindcss = isPackageInScope('tailwindcss'), isInEditor = isInEditorEnv() } = options
 
   if (enableTailwindcss) {
     userConfigs = [tailwindcss(resolveSubOptions(options, 'tailwindcss')), ...userConfigs]
@@ -34,5 +34,14 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
     },
   }
 
-  return antfu(options, ...userConfigs)
+  const composer = antfu(options, ...userConfigs)
+
+  if (isInEditor) {
+    composer.disableRulesFix(['no-useless-return'], {
+      // @ts-expect-error type error
+      builtinRules: () => import('eslint/use-at-your-own-risk').then(r => r.builtinRules),
+    })
+  }
+
+  return composer
 }

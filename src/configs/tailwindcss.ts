@@ -1,6 +1,7 @@
+import plugin from 'eslint-plugin-tailwindcss'
+
 import type { OptionsOverrides } from '@antfu/eslint-config'
 import type { ESLint, Linter } from 'eslint'
-import plugin from 'eslint-plugin-tailwindcss'
 
 export function tailwindcss(options: OptionsOverrides = {}): Linter.Config {
   return {
