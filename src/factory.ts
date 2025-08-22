@@ -26,6 +26,13 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
     }],
     ...options.rules,
   }
+  options.overrides = {
+    ...options.overrides,
+    vue: {
+      'vue/component-name-in-template-casing': ['error', 'PascalCase', { registeredComponentsOnly: false }],
+      ...options.overrides?.vue,
+    },
+  }
 
   return antfu(options, ...userConfigs)
 }
