@@ -17,7 +17,8 @@
   },
   "bugs": "https://github.com/YiMo1/eslint-config/issues",
   "keywords": [
-    "eslint"
+    "eslint",
+    "yimo"
   ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
