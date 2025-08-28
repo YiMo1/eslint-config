@@ -5,4 +5,5 @@ export default defineConfig({
   dts: true,
   format: ['esm'],
   clean: true,
+  external: ['eslint'],
 })
