@@ -1,11 +1,13 @@
-import plugin from 'eslint-plugin-tailwindcss'
+import { ensurePackages, interopDefault } from '@antfu/eslint-config'
 
 import type { OptionsOverrides } from '@antfu/eslint-config'
 import type { ESLint, Linter } from 'eslint'
 
-export function tailwindcss(options: OptionsOverrides = {}): Linter.Config {
+export async function tailwindcss(options: OptionsOverrides = {}): Promise<Linter.Config> {
+  await ensurePackages(['eslint-plugin-tailwindcss'])
+
   return {
-    plugins: { tailwindcss: plugin as ESLint.Plugin },
+    plugins: { tailwindcss: await interopDefault(import('eslint-plugin-tailwindcss')) as ESLint.Plugin },
     rules: {
       'tailwindcss/enforces-shorthand': 'error',
       'tailwindcss/enforces-negative-arbitrary-values': 'error',
