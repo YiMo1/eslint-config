@@ -1,4 +1,5 @@
 import { antfu, isInEditorEnv, isPackageInScope, resolveSubOptions } from '@antfu/eslint-config'
+import { merge } from 'es-toolkit'
 
 import { tailwindcss } from './configs/tailwindcss.ts'
 
@@ -10,30 +11,40 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
     userConfigs = [tailwindcss(resolveSubOptions(options, 'tailwindcss')), ...userConfigs]
   }
 
-  options.formatters = options.formatters ?? true
-  options.rules = {
-    'style/switch-colon-spacing': ['error', { before: false }],
-    'style/max-statements-per-line': ['error', { max: 1, ignoredNodes: ['BreakStatement'] }],
-    'antfu/if-newline': 'off',
-    'perfectionist/sort-imports': ['error', {
-      groups: [
-        'builtin',
-        'external',
-        ['internal', 'parent', 'sibling', 'index'],
-        'style',
-        'type',
-      ],
-      type: 'natural',
-    }],
-    ...options.rules,
-  }
-  options.overrides = {
-    ...options.overrides,
-    vue: {
-      'vue/component-name-in-template-casing': ['error', 'PascalCase', { registeredComponentsOnly: false }],
-      ...options.overrides?.vue,
+  merge(options, {
+    formatters: options.formatters ?? true,
+    rules: {
+      'style/switch-colon-spacing': ['error', { before: false }],
+      'perfectionist/sort-imports': ['error', {
+        groups: [
+          'builtin',
+          'external',
+          ['internal', 'parent', 'sibling', 'index'],
+          'style',
+          'type',
+        ],
+        type: 'natural',
+      }],
     },
-  }
+    overrides: {
+      vue: {
+        'vue/component-name-in-template-casing': ['error', 'PascalCase', { registeredComponentsOnly: false }],
+      },
+      stylistic: {
+        'style/max-statements-per-line': ['error', { max: 1, ignoredNodes: ['BreakStatement'] }],
+        'antfu/if-newline': 'off',
+      },
+      javascript: {
+        'unused-imports/no-unused-vars': ['error', {
+          args: 'all',
+          argsIgnorePattern: '^_$',
+          ignoreRestSiblings: true,
+          vars: 'all',
+          varsIgnorePattern: '^_$',
+        }],
+      },
+    },
+  } satisfies typeof options)
 
   const composer = antfu(options, ...userConfigs)
 
