@@ -12,6 +12,7 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
 
   options.formatters = options.formatters ?? true
   options.rules = {
+    'style/switch-colon-spacing': ['error', { before: false }],
     'style/max-statements-per-line': ['error', { max: 1, ignoredNodes: ['BreakStatement'] }],
     'antfu/if-newline': 'off',
     'perfectionist/sort-imports': ['error', {
