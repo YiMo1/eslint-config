@@ -43,6 +43,9 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
           varsIgnorePattern: '^_$',
         }],
       },
+      typescript: {
+        'ts/consistent-type-definitions': 'off',
+      },
     },
   } satisfies typeof options)
 
