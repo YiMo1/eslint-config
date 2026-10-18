@@ -1,18 +1,25 @@
 import { antfu, isInEditorEnv, isPackageInScope, resolveSubOptions } from '@antfu/eslint-config'
-import { merge } from 'es-toolkit'
+import { toMerged } from 'es-toolkit'
 
 import { tailwindcss } from './configs/tailwindcss.ts'
 
 export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu> {
-  let [options = {}, ...userConfigs] = args
-  const { tailwindcss: enableTailwindcss = isPackageInScope('tailwindcss'), isInEditor = isInEditorEnv() } = options
+  const [userOptions = {}, ...userConfigs] = args
+  const {
+    tailwindcss: enableTailwindcss = isPackageInScope('tailwindcss'),
+    isInEditor = isInEditorEnv(),
+    react = isPackageInScope('react'),
+    unocss = isPackageInScope('unocss'),
+  } = userOptions
 
   if (enableTailwindcss) {
-    userConfigs = [tailwindcss(resolveSubOptions(options, 'tailwindcss')), ...userConfigs]
+    userConfigs.push(tailwindcss(resolveSubOptions(userOptions, 'tailwindcss')))
   }
 
-  merge(options, {
-    formatters: options.formatters ?? true,
+  const options = toMerged({
+    unocss,
+    react,
+    formatters: true,
     rules: {
       'style/switch-colon-spacing': ['error', { before: false }],
       'perfectionist/sort-imports': ['error', {
@@ -47,7 +54,7 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
         'ts/consistent-type-definitions': 'off',
       },
     },
-  } satisfies typeof options)
+  } satisfies typeof userOptions, userOptions)
 
   const composer = antfu(options, ...userConfigs)
 
