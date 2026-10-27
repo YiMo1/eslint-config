@@ -44,10 +44,10 @@ export function yimo(...args: Parameters<typeof antfu>): ReturnType<typeof antfu
       javascript: {
         'unused-imports/no-unused-vars': ['error', {
           args: 'all',
-          argsIgnorePattern: '^_$',
+          argsIgnorePattern: '^_+$',
           ignoreRestSiblings: true,
           vars: 'all',
-          varsIgnorePattern: '^_$',
+          varsIgnorePattern: '^_+$',
         }],
       },
       typescript: {
